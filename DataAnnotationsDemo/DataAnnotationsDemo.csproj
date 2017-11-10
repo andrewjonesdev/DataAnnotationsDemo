@@ -32,8 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,11 +51,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Author.cs" />
+    <Compile Include="Course.cs" />
+    <Compile Include="Migrations\201711092329113_InitialModel.cs" />
+    <Compile Include="Migrations\201711092329113_InitialModel.Designer.cs">
+      <DependentUpon>201711092329113_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711092335092_AddAnnotationsToCourseTable.cs" />
+    <Compile Include="Migrations\201711092335092_AddAnnotationsToCourseTable.Designer.cs">
+      <DependentUpon>201711092335092_AddAnnotationsToCourseTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711092340345_AddAnnotationsForAuthorIdToCourseTable.cs" />
+    <Compile Include="Migrations\201711092340345_AddAnnotationsForAuthorIdToCourseTable.Designer.cs">
+      <DependentUpon>201711092340345_AddAnnotationsForAuthorIdToCourseTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711092347338_AddAnnotationsForAuthorIdToCourseTableAttempt2.cs" />
+    <Compile Include="Migrations\201711092347338_AddAnnotationsForAuthorIdToCourseTableAttempt2.Designer.cs">
+      <DependentUpon>201711092347338_AddAnnotationsForAuthorIdToCourseTableAttempt2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711092357495_AddAnnotationsForAuthorIdRequiredToCourseTableAttempt.cs" />
+    <Compile Include="Migrations\201711092357495_AddAnnotationsForAuthorIdRequiredToCourseTableAttempt.Designer.cs">
+      <DependentUpon>201711092357495_AddAnnotationsForAuthorIdRequiredToCourseTableAttempt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PlutoContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711092329113_InitialModel.resx">
+      <DependentUpon>201711092329113_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711092335092_AddAnnotationsToCourseTable.resx">
+      <DependentUpon>201711092335092_AddAnnotationsToCourseTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711092340345_AddAnnotationsForAuthorIdToCourseTable.resx">
+      <DependentUpon>201711092340345_AddAnnotationsForAuthorIdToCourseTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711092347338_AddAnnotationsForAuthorIdToCourseTableAttempt2.resx">
+      <DependentUpon>201711092347338_AddAnnotationsForAuthorIdToCourseTableAttempt2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711092357495_AddAnnotationsForAuthorIdRequiredToCourseTableAttempt.resx">
+      <DependentUpon>201711092357495_AddAnnotationsForAuthorIdRequiredToCourseTableAttempt.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
